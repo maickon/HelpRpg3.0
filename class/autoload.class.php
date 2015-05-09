@@ -17,7 +17,12 @@ final class Autoload{
 				require "interface/{$classname}.php";
 			elseif(file_exists("class/atributos/{$classname}.class.php")):
 				require "class/atributos/{$classname}.class.php";
+			elseif(file_exists("class/racas/{$classname}.class.php")):
+				require "class/racas/{$classname}.class.php";
+			elseif(file_exists("class/testes/{$classname}.class.php")):
+				require "class/testes/{$classname}.class.php";
 			endif;
+			
 		}
 	}
 }
