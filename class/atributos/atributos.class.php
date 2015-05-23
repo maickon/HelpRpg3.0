@@ -110,5 +110,11 @@ class Atributos{
 	function dgd_bonus_adicional($nivel){
 		return intval($nivel/4);
 	}
+	
+	/* Metodo dgd_pericias()
+	 * Calcula os pontos de pericia de um personagem
+	 * conforme o seu nivel
+	 */
+	
 }
 ?>
