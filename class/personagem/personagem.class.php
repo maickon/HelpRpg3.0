@@ -110,7 +110,7 @@ class Personagem implements IPersonagem{
 				'Cabelo Longo', 'Cabelo Cacheado', 'Cabelo curto', 'Cebelo muito Curto (Militar)',
 				'Cabelo curto para trás', 'Cabelo Dividido no meio', 'Cabelo Bagunçado', 'Cabelo Arrepiado',
 				'Cabelo com Topete', 'Cabelo Moecano', 'Cabelo com Franja', 'Cabelo Indígena', 'Cabelo Raça-fare',
-				'Cabelo com Dred', 'Cabelo Ruim', 'Cabelo Black Power', 'Cabelo Muito Liso', 'Cabeça raspada');
+				'Cabelo com Dred', 'Cabelo Afro', 'Cabelo Black Power', 'Cabelo Muito Liso', 'Cabeça raspada');
 		
 		$escolhido = $estilos[rand(0, count($estilos)-1)];
 		if($escolhido == 'Cabeça raspada'):
@@ -126,11 +126,12 @@ class Personagem implements IPersonagem{
 	
 	public function dgd_estilo_do_cabelo_feminino(){
 		$estilos = array(
-				'Cabelo longo', 'Cabelo Muito longo', 'Cabelo cacheado curto', 'Cabelo Chacheado longo',
-				'Cabelo chacheado Black Power', 'Cabelo muito liso curto', 'Cabelo Trançado longo', 
+				'Cabelo longo', 'Cabelo Muito longo', 'Cabelo cacheado curto', 'Cabelo Cacheado longo',
+				'Cabelo cacheado','Black Power', 'Cabelo muito liso curto', 'Cabelo Trançado longo', 
 				'Cabelo curto', 'Cabelo curto com franja', 'Cabelo longo com franja', 'Cabelo curto espetado',
 				'Cabelo curto divididoa ao meio', 'Cabelo emo', 'Cabelo Raça-fare longo', 'Cabelo raça-fare curto',
-				'Cabelo maria chiquinha', 'Cabelo bagunçado', 'Cabeça raspada');
+				'Cabelo maria chiquinha', 'Cabelo bagunçado', 'Cabeça raspada', 'Cabelo Levemente Ondulado', 'Cabelo Ondulado',
+				'Cabelo Afro', );
 		
 		$escolhido = $estilos[rand(0, count($estilos)-1)];
 		if($escolhido == 'Cabeça raspada'):
@@ -155,6 +156,82 @@ class Personagem implements IPersonagem{
 	public function dgd_cor_da_pele(){
 		$cor_da_pele = array('Muito clara','Clara','Parda','Negra','Morena','Branca');
 		$this->cor_da_pele = $cor_da_pele[rand(0, count($cor_da_pele)-1)];
+	}
+	
+	/* Metodo dgd_estilo_do_nariz
+	 * Define como é o nariz do personagem
+	 */
+	
+	public function dgd_estilo_do_nariz(){
+		$tipo_de_nariz = array('Grande','Pequeno','Longo','Curto','Reto','Curvo para Cima','Adunco','Romano','Ondulado','Arrebitado','Pontudo','Arredondado','Achatado e Largo','Núbio');
+		$this->tipo_de_nariz = $tipo_de_nariz[rand(0, count($tipo_de_nariz)-1)];
+	}
+	
+	/* Metodo dgd_estilo_da_boca
+	 * Define como é a boca do personagem
+	*/
+	
+	public function dgd_estilo_da_boca(){
+		$tipo_da_boca = array('Lábios Carnudos','Boca Grande','Labio superior predominante ','Lábio inferior predominante',
+							  'Boca pequena','Lábios Finos','Lábio superior mais fino','Lábio Inferior mais fino',
+							  'Lábios Grossos','Labios Caídos','Lábios Pequenos');
+		$this->tipo_da_boca = $tipo_da_boca[rand(0, count($tipo_da_boca)-1)];
+	}
+	
+	/* Metodo dgd_estilo_da_sobrancelha
+	 * Define como são as sobrancelhas do personagem
+	*/
+	
+	public function dgd_estilo_da_sobrancelha(){
+		$tipo_da_sobrancelha = array(
+				'Sobrancelhas retas','Sobrancelhas redondas','Sobrancelhas caídas','Sobrancelhas arqueadas',
+				'Sobrancelhas finas', 'Sobrancelhas Grossas', 'Sobrancelhas curvadas');
+		$this->tipo_da_sobrancelha = $tipo_da_sobrancelha[rand(0, count($tipo_da_sobrancelha)-1)];
+	}
+	
+	/* Metodo dgd_estilo_do_rosto
+	 * Define como é a forma do rosto do personagem
+	*/
+	
+	public function dgd_estilo_do_rosto(){
+		$estilo_do_rosto = array(
+				'Oval','Redondo','Triângulo Invertido','Quadrado',
+				'Retângulo', 'Diamante', 'Rosto Longo','Pêra');
+		$this->estilo_do_rosto = $estilo_do_rosto[rand(0, count($estilo_do_rosto)-1)];
+	}
+	
+	/* Metodo dgd_estilo_de_olho
+	 * Define como é a forma dos olhos do personagem
+	*/
+	
+	public function dgd_estilo_de_olho(){
+		$estilo_de_olho = array(
+				'Olhos Amendoados','Olhos Profundos','Olhos encapsulados','Olhos salientes',
+				'Olhos sonolentos', 'Olhos com pálpebra voltada para Baixo', 'Olhos separados',
+				'Olhos aproximados', 'Olhos asiáticos');
+		$this->estilo_do_olho = $estilo_de_olho[rand(0, count($estilo_de_olho)-1)];
+	}
+	
+	/* Metodo dgd_estilo_de_queixo
+	 * Define como é a forma do queixo do personagem
+	*/
+	
+	public function dgd_estilo_de_queixo(){
+		$estilo_de_queixo = array(
+				'Padrão','Pontudo','Pronunciado','Redondo',
+				'Reto', 'Retraído', 'Largo', 'Estreito', 'Redondo', 'Longo e pontudo', 'Pontudo não pronunciado', 'Pequeno e bem-feito',
+				'Para dentro','Com furinho','Muito pequeno','Duplo');
+		$this->estilo_do_queixo = $estilo_de_queixo[rand(0, count($estilo_de_queixo)-1)];
+	}
+	
+	/* Metodo dgd_estilo_de_testa
+	 * Define como é a forma da testa do personagem
+	*/
+	
+	public function dgd_estilo_de_testa(){
+		$estilo_de_testa = array(
+				'Longo','Oval','Redondo','Retangular','Quadrado','Triangular','Diamante','Triango Invertido','Coração');
+		$this->estilo_da_testa = $estilo_de_testa[rand(0, count($estilo_de_testa)-1)];
 	}
 }
 ?>

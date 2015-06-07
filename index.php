@@ -1,3 +1,4 @@
+<link rel="stylesheet" media="screen" href="css/index.css" />
 <?php
 if(file_exists('init.php')):
 	require 'init.php';
