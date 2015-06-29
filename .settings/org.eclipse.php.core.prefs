@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 include_path=0;/rede_social
+=======
+include_path=0;/Dungeons and Dragons
+>>>>>>> 35fdc14065efebd247f82fdf58d77e4029f8a32a
 use_asp_tags_as_php=false
