@@ -1,4 +1,5 @@
 <link rel="stylesheet" media="screen" href="css/index.css" />
+ <script src="js/index.js"></script>
 <?php
 if(file_exists('init.php')):
 	require 'init.php';
