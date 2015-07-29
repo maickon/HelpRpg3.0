@@ -6,7 +6,7 @@
  * @date 09/05/2015
 */
 
-class Teste_personagem{
+class Teste_personagem extends Test{
 	
 	function __construct(){
 		$this->main();
@@ -24,7 +24,7 @@ class Teste_personagem{
 		
 		$tag->div('id="contrainer"');
 			$personagem = new Personagem();
-			$personagem->dgd_nivel(20);
+			$personagem->dgd_nivel();
 			$personagem->dgd_nome();
 			$personagem->dgd_sexo();
 			$personagem->dgd_cor_do_cabelo();
@@ -58,6 +58,11 @@ class Teste_personagem{
 			
 			$this->show($caracteristicas);
 			
+			new Teste_barbaro($personagem->nivel);			
+		
+			
+			new Teste_racas($caracteristicas['Sexo']);
+			
 			$attr = new Atributos();
 			$attr->forca = $attr->dgd_habilidades($personagem->nivel);
 			$attr->destr = $attr->dgd_habilidades($personagem->nivel);
@@ -78,21 +83,25 @@ class Teste_personagem{
 						)
 					);
 	}
-	
-	function show(array $show){
-		echo '<div class="container">';
-		foreach($show as $name => $content):
-			echo '<div class="description"><strong class="label">'.$name . '</strong> <span class="resposte">'.$content. '</span> </div>';
+	/*
+	function show_list($functon, $attr, $loop = 20){
+		$values = array();
+		while($loop >= 0):
+			$personagem = new Personagem();
+			$personagem->$functon();
+			if($loop == 0):
+				$values[] = "{$personagem->$attr}";
+			else:
+				$values[] = "{$personagem->$attr}_";
+			endif;
+			$loop--;
+		endwhile;
+		
+		foreach($values as $value):
+			$opcoes .= $value;
 		endforeach;
-		echo '</div>';
+		return $opcoes;
 	}
-	
-	function show_habilidades(array $show){
-		echo '<div class="container_habilidades">';
-		foreach($show as $name => $content):
-			echo '<div class="description"><strong class="label">'.$name . '</strong> <span class="resposte">'.$content. '</span> </div>';
-		endforeach;
-		echo '</div>';
-	}
+	*/
 }
 ?>
