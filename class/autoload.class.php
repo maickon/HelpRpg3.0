@@ -11,12 +11,14 @@ final class Autoload{
 		function __autoload($classname){
 			if(file_exists("class/{$classname}.class.php")):
 				require "class/{$classname}.class.php";
+			elseif(file_exists("class/classes/{$classname}.class.php")):
+				require "class/classes/{$classname}.class.php";
 			elseif(file_exists("class/personagem/{$classname}.class.php")):
 				require "class/personagem/{$classname}.class.php";
 			elseif(file_exists("interface/{$classname}.php")):
 				require "interface/{$classname}.php";
-			elseif(file_exists("class/atributos/{$classname}.class.php")):
-				require "class/atributos/{$classname}.class.php";
+			elseif(file_exists("class/algoritmos/{$classname}.class.php")):
+				require "class/algoritmos/{$classname}.class.php";
 			elseif(file_exists("class/racas/{$classname}.class.php")):
 				require "class/racas/{$classname}.class.php";
 			elseif(file_exists("class/testes/{$classname}.class.php")):
