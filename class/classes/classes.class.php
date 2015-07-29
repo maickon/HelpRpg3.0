@@ -30,4 +30,39 @@ abstract class Classes implements IClasses{
 			echo 'Parametro não Informado.';
 		endif;
 	}
+<<<<<<< HEAD:class/classes/classes.class.php
 }
+=======
+	/* (non-PHPdoc)
+	 * @see IRacas::dgd_raca()
+	 */public function dgd_raca() {
+		// TODO Auto-generated method stub
+		}
+
+	/* (non-PHPdoc)
+	 * @see IRacas::dgd_deslocamento()
+	 */public function dgd_deslocamento() {
+		// TODO Auto-generated method stub
+		}
+
+	/* (non-PHPdoc)
+	 * @see IRacas::dgd_altura()
+	 */public function dgd_altura() {
+		// TODO Auto-generated method stub
+		}
+
+	/* (non-PHPdoc)
+	 * @see IRacas::dgd_peso()
+	 */public function dgd_peso() {
+		// TODO Auto-generated method stub
+		}
+
+	/* (non-PHPdoc)
+	 * @see IRacas::dgd_idade()
+	 */public function dgd_idade() {
+		// TODO Auto-generated method stub
+		}
+
+}
+?>
+>>>>>>> 0e06cdfff5f4cef1916042b7a46fd28602b60cf5:racas/racas.class.php
