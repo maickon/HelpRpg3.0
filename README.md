@@ -42,7 +42,11 @@ Este arquivo verifica se existe a classe Autoload.class.php no diretório /class,
 </p>
 
 
-<h2>Introdução</h2>
+<h2>Classe Autoload</h2>
 <p>
-Esta classe possui em seu método contrutor uma chamada ao mátodo mágico _autoload($classname). Este método intercepta qualquer instanciação feita caso a classe não exista (nao tenha um caminho válido por require ainda). Dessa forma o método _autoload($classname) vai aceitar por parametro o nome da classe que vem automaticamente. Com este nome o metodo vai fazer o seu devido tratamento. Ele vai verificar se existe um arquivo de classe dentro da pasta /class, se houver este arquivo ele será requisitado no momenta de sua instanciação. Com isso podemos dizer que toda vez que eu criar um objeto, Ex: $teste = new Teste(), automaticamente estará sendo verificado se existe a classe Teste da pasta /class, se houver este arquivo será carregado através do reuire e a instanciação será válida.
+Esta classe possui em seu método contrutor uma chamada ao mátodo mágico _autoload($classname). Este método intercepta qualquer instanciação feita caso a classe não exista (nao tenha um caminho válido por require ainda). Dessa forma o método _autoload($classname) vai aceitar por parametro o nome da classe que vem automaticamente. Com este nome o metodo vai fazer o seu devido tratamento. 
+</p>
+
+<p>
+Ele vai verificar se existe um arquivo de classe dentro da pasta /class, se houver este arquivo ele será requisitado no momenta de sua instanciação. Com isso podemos dizer que toda vez que eu criar um objeto, Ex: $teste = new Teste(), automaticamente estará sendo verificado se existe a classe Teste da pasta /class, se houver este arquivo será carregado através do reuire e a instanciação será válida.
 </p>
