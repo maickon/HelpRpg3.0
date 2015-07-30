@@ -95,17 +95,51 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 </p>
 
 <h2><a name="algoritm">Classe Algoritmos</a></h2>
+	<ul>
+		<li><h4>Classe - Atributos</h4></li>
+		<li><h4>Classe - Perícias</h4></li>	
+		<li><h4>Classe - Testes de Resistencia</h4></li>
+	</ul>
+	
 <p></p>
 
 <h2><a name="basic-class">Classe Classes Básicas de D&D</a></h2>
+	<ul>
+		<li><h4>Classe - classes</h4></li>
+		<li><h4>Classe - Barbaro</h4></li>	
+		<li><h4>Classe - Druida</h4></li>
+		<li><h4>Classe - Ranger</h4></li>	
+		<li><h4>Classe - Monge</h4></li>
+		<li><h4>Classe - Clérigo</h4></li>	
+		<li><h4>Classe - Paladino</h4></li>
+		<li><h4>Classe - Mago</h4></li>	
+		<li><h4>Classe - Feiticeiro</h4></li>
+		<li><h4>Classe - Ladino</h4></li>	
+		<li><h4>Classe - Bardo</h4></li>
+	</ul>
 <p></p>
 
 <h2><a name="character">Classe Personagens</a></h2>
 <p></p>
 
 <h2><a name="races">Classe Raças</a></h2>
+	<ul>
+		<li><h4>Classe - Humano</h4></li>
+		<li><h4>Classe - Orc</h4></li>	
+		<li><h4>Classe - Anão</h4></li>
+		<li><h4>Classe - Elfo</h4></li>	
+		<li><h4>Classe - Meio-Elfo</h4></li>
+		<li><h4>Classe - Halfing</h4></li>	
+	</ul>
+	
 <p></p>
 
 <h2><a name="test">Classe de Teste</a></h2>
+	<ul>
+		<li><h4>Classe - Test</h4></li>
+		<li><h4>Classe - Teste Barbaro</h4></li>	
+		<li><h4>Classe - Teste Personagem</h4></li>
+		<li><h4>Classe - Teste Raças</h4></li>	
+	</ul>
 <p></p>
 
