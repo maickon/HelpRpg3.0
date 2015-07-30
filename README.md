@@ -29,11 +29,20 @@ Sempre na medida do possível eu tentarei manter atualizado a documentação do cód
 </p>
 
 <ul>
-	<li><a href="#introducao">Introducão</a></li>
+	<li><a href="#Introducao">Introducão</a></li>
+	<li><a href="#Classe Aitoload">Classe Autoload</a></li>
 </ul>
 
 
 <h2>Introdução</h2>
 <p>
+A página principal verifica se existe o arquivo de inicializacao chamado init.php. Se existir carrega por require e logo em seguida instancia um objeto de teste para se criar um peronagem, do contrário exibe uma mensagem de erro.
+<h6>Arquivo Init.php</h6>
+Este arquivo verifica se existe a classe Autoload.class.php no diretório /class, se existir será instanciado um objeto autoload new Autoload(), do contrário será exibido uma mensagem de erro.
+</p>
 
+
+<h2>Introdução</h2>
+<p>
+Esta classe possui em seu método contrutor uma chamada ao mátodo mágico _autoload($classname). Este método intercepta qualquer instanciação feita caso a classe não exista (nao tenha um caminho válido por require ainda). Dessa forma o método _autoload($classname) vai aceitar por parametro o nome da classe que vem automaticamente. Com este nome o metodo vai fazer o seu devido tratamento. Ele vai verificar se existe um arquivo de classe dentro da pasta /class, se houver este arquivo ele será requisitado no momenta de sua instanciação. Com isso podemos dizer que toda vez que eu criar um objeto, Ex: $teste = new Teste(), automaticamente estará sendo verificado se existe a classe Teste da pasta /class, se houver este arquivo será carregado através do reuire e a instanciação será válida.
 </p>
