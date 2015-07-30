@@ -40,7 +40,7 @@ class Teste_personagem extends Test{
 			$personagem->dgd_estilo_de_testa();
 			
 			$caracteristicas = array(
-									'Nivel'=> $this->montar_opcoes("dgd_nivel","nivel"),
+									'Nivel'=> $personagem->nivel,
 									'Nome'=> $personagem->nome,
 									'Sexo'=> $personagem->sexo,
 									'Cor do Cabelo'=> $personagem->cor_do_cabelo,
@@ -83,53 +83,7 @@ class Teste_personagem extends Test{
 						)
 					);
 	}
-<<<<<<< HEAD
-	/*
-	function show_list($functon, $attr, $loop = 20){
-		$values = array();
-		while($loop >= 0):
-			$personagem = new Personagem();
-			$personagem->$functon();
-			if($loop == 0):
-				$values[] = "{$personagem->$attr}";
-			else:
-				$values[] = "{$personagem->$attr}_";
-			endif;
-			$loop--;
-		endwhile;
-		
-		foreach($values as $value):
-			$opcoes .= $value;
-=======
-	
-	function show(array $show){
-		$id = 0;
-		echo '<div class="container">';
-		foreach($show as $name => $content):
-			$id++;
-			echo '<div class="description">
-				  	<strong class="label">'.$name . '</strong>
-				  		<span class="resposte">
-				  		<input type="text" name="nomes" id="value'.$id.'" value="">
-						<input type="hidden" name="nomes" id="values_list'.$id.'" value="'.$content. '">
-				  		</span>
-				  </div>';
-		endforeach;
-		echo '</div>';
-		echo '<input type="button" onClick="loop_geral(50,2000);" value="Novo Personagem">';
-	}
-	
-	function show_habilidades(array $show){
-		echo '<div class="container_habilidades">';
-		foreach($show as $name => $content):
-			echo '<div class="description"><strong class="label">'.$name . '</strong> <span class="resposte">'.$content. '</span> </div>';
->>>>>>> 0e06cdfff5f4cef1916042b7a46fd28602b60cf5
-		endforeach;
-		return $opcoes;
-	}
-<<<<<<< HEAD
-	*/
-=======
+
 	
 	function montar_opcoes($funcao, $atributo){
 		$i = 0;
@@ -146,6 +100,6 @@ class Teste_personagem extends Test{
 		endwhile;
 		return($valores);
 	}
->>>>>>> 0e06cdfff5f4cef1916042b7a46fd28602b60cf5
+
 }
 ?>

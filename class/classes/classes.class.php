@@ -29,10 +29,7 @@ abstract class Classes implements IClasses{
 		else:
 			echo 'Parametro não Informado.';
 		endif;
-	}
-<<<<<<< HEAD:class/classes/classes.class.php
 }
-=======
 	/* (non-PHPdoc)
 	 * @see IRacas::dgd_raca()
 	 */public function dgd_raca() {
@@ -65,4 +62,4 @@ abstract class Classes implements IClasses{
 
 }
 ?>
->>>>>>> 0e06cdfff5f4cef1916042b7a46fd28602b60cf5:racas/racas.class.php
+

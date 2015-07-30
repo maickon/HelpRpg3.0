@@ -21,3 +21,19 @@ Faça o download deste projeto no botão <em> Download ZIP</em> do lado direito de
 <p>
 Para acessar o projeto em funcionamento basta você acessar no seu navegador o endereço <a href="http://127.0.0.1/"> http://127.0.0.1/ + o nome do projeto (pasta descompactada)</a>. Dessa forma você poderá ver o sistema rodando.
 </p>
+
+
+<h2>Documentação</h2>
+<p>
+Sempre na medida do possível eu tentarei manter atualizado a documentação do código que estou escrevendo.
+</p>
+
+<ul>
+	<li><a href="#introducao">Introducão</a></li>
+</ul>
+
+
+<h2>Introdução</h2>
+<p>
+
+</p>
