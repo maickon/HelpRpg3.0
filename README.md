@@ -97,6 +97,7 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 <h2><a name="algoritm">Classe Algoritmos</a></h2>
 	<ul>
 		<li><h4>Classe - Atributos</h4></li>
+<<<<<<< HEAD
 		<p>
 			No RPG de D&D todo o personagem possui 6 habilidades base. Para saber o valor inicial destas habilidades se faz necessário a rolagem de 4 dados de 6 faces descartando o menor número.
 		</p>
@@ -143,6 +144,10 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 				<p>se for 2 incrementaremos uma variável que representa a resistência ruin em 1, esta variavel começa em zero e vai aumentando. Após isso zeramos o índice para começar a percorre-la novamente e diminuimos o nível em 3. Por conta disso o loop será menor a cada vez que a variável de resistência ruim for incrementada. Quando o índice não conseguir mais ser iguel a 2 o loop terminará e teremos armazenado na variável $resistencia_ruin o valor total de um teste de resistência conforme o nível informado.</p>
 			</ul>
 		</p>
+=======
+		<li><h4>Classe - Perícias</h4></li>	
+		<li><h4>Classe - Testes de Resistencia</h4></li>
+>>>>>>> c018042a854d6866f1d8fdf407075e826bca12d3
 	</ul>
 	
 <p></p>
@@ -150,6 +155,7 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 <h2><a name="basic-class">Classe Classes Básicas de D&D</a></h2>
 	<ul>
 		<li><h4>Classe - classes</h4></li>
+<<<<<<< HEAD
 		<p>
 			A classe Classes representa todas as classe básicas do jogo de RPG D&D. Ela prover todos os métodos base que uma classe deve ter. Por conta disso ela não é uma classe concreta e não pode ser instanciada, por isso ela é declarada como abstrata. Além disso ela implementa a interface IClasses, esta interface estabelece todos os métodos comuns que as classes básicas devem ter inplementado.
 
@@ -194,6 +200,9 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 			Estas classes mais específicas vão implementar os métodos estabelecidos na interface de sua classe abstrata pai (Classes). Aqui casa classe vai definir como funcionará o comportamento de seus métodos. Embora as classes sejam diferentes, elas implementam os mesmos métodos, porém de maneiras distintas (viva o polimosfismo! rsrs)
 		</p>
 
+=======
+		<li><h4>Classe - Barbaro</h4></li>	
+>>>>>>> c018042a854d6866f1d8fdf407075e826bca12d3
 		<li><h4>Classe - Druida</h4></li>
 		<li><h4>Classe - Ranger</h4></li>	
 		<li><h4>Classe - Monge</h4></li>
@@ -207,6 +216,7 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 <p></p>
 
 <h2><a name="character">Classe Personagens</a></h2>
+<<<<<<< HEAD
 <p>
 	Esta classe vai estabelecer todas as características a forma do personagem e aparencia e o seu nível de personagem.
 </p>
@@ -269,6 +279,9 @@ LoadCss(css_path), podemos carregar todos os arquivos que estiverem dentro da pa
 	</ul>	
 
 </p>
+=======
+<p></p>
+>>>>>>> c018042a854d6866f1d8fdf407075e826bca12d3
 
 <h2><a name="races">Classe Raças</a></h2>
 	<ul>
