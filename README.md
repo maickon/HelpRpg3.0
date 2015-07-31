@@ -95,119 +95,119 @@ Sempre na medida do possível eu tentarei manter atualizado a documentação do cód
 </p>
 
 <h2><a name="algoritm">Classe Algoritmos</a></h2>
-	<ul>
-		<li><h4>Classe - Atributos</h4></li>
-		<p>
-			No RPG de D&D todo o personagem possui 6 habilidades base. Para saber o valor inicial destas habilidades se faz necessário a rolagem de 4 dados de 6 faces descartando o menor número.
-		</p>
-		<p>
-			Desta forma se faz necessário um algoritimo que simule a rolagem deste 6 dados descartando o menor número entre eles.
-		</p>
-		<p>
-			A classe atributos contém apenas um único atributo de classe [$atributos], este será um array que manterá um referência para cada uma das 6 habilidades base.
-		</p>
-		<p>
-			<ul>
-				<li>function __set($propriedade, $valor)</li>
-				<p>
-				Esta classe possui o metodo mágico __set($propiedade, $valor) que vai interceptar uma atribuição a uma propieade inexistente da classe Atributos. Ao identificar que o atributo não existe, ele vai pegar este nome. Ex: $objeto->força como a propiedade forca não existe, ela será adicionada no array $atrubutos na posição indexada chamada $valor.
-				</p>
-				
-				<li>function __get($propriedade)</li>
-				<p>Quando você acessar uma propriedade que não existe no objeto, ela será interceptada pelo método __get() que fará uma busca no array propiedades e retornará o suposto atributo caso ele exista na lista.</p>
+<ul>
+	<li><h4>Classe - Atributos</h4></li>
+	<p>
+		No RPG de D&D todo o personagem possui 6 habilidades base. Para saber o valor inicial destas habilidades se faz necessário a rolagem de 4 dados de 6 faces descartando o menor número.
+	</p>
+	<p>
+		Desta forma se faz necessário um algoritimo que simule a rolagem deste 6 dados descartando o menor número entre eles.
+	</p>
+	<p>
+		A classe atributos contém apenas um único atributo de classe [$atributos], este será um array que manterá um referência para cada uma das 6 habilidades base.
+	</p>
+	<p>
+		<ul>
+			<li>function __set($propriedade, $valor)</li>
+			<p>
+			Esta classe possui o metodo mágico __set($propiedade, $valor) que vai interceptar uma atribuição a uma propieade inexistente da classe Atributos. Ao identificar que o atributo não existe, ele vai pegar este nome. Ex: $objeto->força como a propiedade forca não existe, ela será adicionada no array $atrubutos na posição indexada chamada $valor.
+			</p>
 			
-				<li>function dgd_habilidades()</li>	
-				<p>Este método é responsável por gerar as rolagens de dado. Ele simula a rolagem de 6 dados de 6 faces, esta rolagem vai se repetir caso o resultado seja menor do que 8.</p>
-				<p>Após armazenar 4 valores aleatorios entre 1 a 6 am cada variável, haverá um identificação para saber qual dos quatros valores é o menor. Uma vez que tenha identificado o menor valor, o mesmo será subtraido do valor total dos números sorteados.</p>
+			<li>function __get($propriedade)</li>
+			<p>Quando você acessar uma propriedade que não existe no objeto, ela será interceptada pelo método __get() que fará uma busca no array propiedades e retornará o suposto atributo caso ele exista na lista.</p>
+		
+			<li>function dgd_habilidades()</li>	
+			<p>Este método é responsável por gerar as rolagens de dado. Ele simula a rolagem de 6 dados de 6 faces, esta rolagem vai se repetir caso o resultado seja menor do que 8.</p>
+			<p>Após armazenar 4 valores aleatorios entre 1 a 6 am cada variável, haverá um identificação para saber qual dos quatros valores é o menor. Uma vez que tenha identificado o menor valor, o mesmo será subtraido do valor total dos números sorteados.</p>
 
-				<li>function dgd_modificador($attr)</li>
-				<p>Esta função vai gerar um modificador de habilidade. No RPG de D&D toda habilidade possui um modificador e um modificador é um valor equivalente a ($att-10)/2 arredondado para cima.</p>
+			<li>function dgd_modificador($attr)</li>
+			<p>Esta função vai gerar um modificador de habilidade. No RPG de D&D toda habilidade possui um modificador e um modificador é um valor equivalente a ($att-10)/2 arredondado para cima.</p>
 
-				<li>function dgd_bonus_adicional($nivel)</li>
-				<p>Este método vai gerar um ponto de habilidade para somar aos atributos a cada 4 $niveis.</p>
-			</ul>	
-		</p>
-		<li><h4>Classe - Perícias</h4></li>	
-		<li><h4>Classe - Testes de Resistencia</h4></li>
-		<p>
-			Esta classe vai representar os testes de resistência de um personagem de D&D. O valor base de um teste de resistência vai depender do nível do personagem. Existem dois tipos de testes que são os ruins e os bons. Abaixo a explicação da implementação de cada um.
+			<li>function dgd_bonus_adicional($nivel)</li>
+			<p>Este método vai gerar um ponto de habilidade para somar aos atributos a cada 4 $niveis.</p>
+		</ul>	
+	</p>
+	<li><h4>Classe - Perícias</h4></li>	
+	<li><h4>Classe - Testes de Resistencia</h4></li>
+	<p>
+		Esta classe vai representar os testes de resistência de um personagem de D&D. O valor base de um teste de resistência vai depender do nível do personagem. Existem dois tipos de testes que são os ruins e os bons. Abaixo a explicação da implementação de cada um.
 
-			<ul>
-				<li>function dg_teste_bom($nivel)</li>
-				<p>Este teste é simples por ele será 2 no nível 1 e a cada dois níveis de personagem ele aumenta 2.</p>
+		<ul>
+			<li>function dg_teste_bom($nivel)</li>
+			<p>Este teste é simples por ele será 2 no nível 1 e a cada dois níveis de personagem ele aumenta 2.</p>
 
-				<li>function dg_teste_ruim($nivel)</li>
-				<p>Este teste é mais complicado um pouquinho. Até o segundo nível de personagem o seu bônus está em zero. Depois disso pelos próximos 3 níveis ele vai aumentando de um em um. Ex: Lv 3,4,5 será +1, Lv 6,7,8 será +2 e assim por diante.</p>
-				<p>Seu algoritmo primeiro identifica se o nível é menor do que 2, se for o seu bônus será 0. Do contrário verifica se o nível é menor do que 0 pois ser for nada deverá ser feito. Entretanto se não for menor do que 0, percorreremos o nível do personagem partindo do 0 e verificamos quando o índice for 2 (no caso 2 é como se fosse 3 por começar em 0).
-				</p> 
-				<p>se for 2 incrementaremos uma variável que representa a resistência ruin em 1, esta variavel começa em zero e vai aumentando. Após isso zeramos o índice para começar a percorre-la novamente e diminuimos o nível em 3. Por conta disso o loop será menor a cada vez que a variável de resistência ruim for incrementada. Quando o índice não conseguir mais ser iguel a 2 o loop terminará e teremos armazenado na variável $resistencia_ruin o valor total de um teste de resistência conforme o nível informado.</p>
-			</ul>
-		</p>
+			<li>function dg_teste_ruim($nivel)</li>
+			<p>Este teste é mais complicado um pouquinho. Até o segundo nível de personagem o seu bônus está em zero. Depois disso pelos próximos 3 níveis ele vai aumentando de um em um. Ex: Lv 3,4,5 será +1, Lv 6,7,8 será +2 e assim por diante.</p>
+			<p>Seu algoritmo primeiro identifica se o nível é menor do que 2, se for o seu bônus será 0. Do contrário verifica se o nível é menor do que 0 pois ser for nada deverá ser feito. Entretanto se não for menor do que 0, percorreremos o nível do personagem partindo do 0 e verificamos quando o índice for 2 (no caso 2 é como se fosse 3 por começar em 0).
+			</p> 
+			<p>se for 2 incrementaremos uma variável que representa a resistência ruin em 1, esta variavel começa em zero e vai aumentando. Após isso zeramos o índice para começar a percorre-la novamente e diminuimos o nível em 3. Por conta disso o loop será menor a cada vez que a variável de resistência ruim for incrementada. Quando o índice não conseguir mais ser iguel a 2 o loop terminará e teremos armazenado na variável $resistencia_ruin o valor total de um teste de resistência conforme o nível informado.</p>
+		</ul>
+	</p>
 
-		<li><h4>Classe - Perícias</h4></li>	
-		<li><h4>Classe - Testes de Resistencia</h4></li>
-	</ul>
+	<li><h4>Classe - Perícias</h4></li>	
+	<li><h4>Classe - Testes de Resistencia</h4></li>
+</ul>
 	
 <p></p>
 
 <h2><a name="basic-class">Classe Classes Básicas de D&D</a></h2>
-	<ul>
-		<li><h4>Classe - classes</h4></li>
-		<p>
-			A classe Classes representa todas as classe básicas do jogo de RPG D&D. Ela prover todos os métodos base que uma classe deve ter. Por conta disso ela não é uma classe concreta e não pode ser instanciada, por isso ela é declarada como abstrata. Além disso ela implementa a interface IClasses, esta interface estabelece todos os métodos comuns que as classes básicas devem ter inplementado.
+<ul>
+	<li><h4>Classe - classes</h4></li>
+	<p>
+		A classe Classes representa todas as classe básicas do jogo de RPG D&D. Ela prover todos os métodos base que uma classe deve ter. Por conta disso ela não é uma classe concreta e não pode ser instanciada, por isso ela é declarada como abstrata. Além disso ela implementa a interface IClasses, esta interface estabelece todos os métodos comuns que as classes básicas devem ter inplementado.
 
-			<ul>
-				<li>function __construct()</li>
-				<p>O método construtor vai chamar todos os outros métodos estabelecidos na interface de sua classe pai.</p>
+		<ul>
+			<li>function __construct()</li>
+			<p>O método construtor vai chamar todos os outros métodos estabelecidos na interface de sua classe pai.</p>
 
-				<li>function dgd_pts_pericias()</li>
-				<p>No RPG D&D cada classe possui um dado de vida em específico, o DV do bárbaro é 12. Este método apenas inicializa o atributo de dados de vida em 12.</p>
+			<li>function dgd_pts_pericias()</li>
+			<p>No RPG D&D cada classe possui um dado de vida em específico, o DV do bárbaro é 12. Este método apenas inicializa o atributo de dados de vida em 12.</p>
 
-				<li>function dgd_talentos()</li>
-				<p>Cada classe possui a sua lista de talentos. este método apenas inicializa uma lista (array) com os talentos previsto na classe de Bábaro.</p>
+			<li>function dgd_talentos()</li>
+			<p>Cada classe possui a sua lista de talentos. este método apenas inicializa uma lista (array) com os talentos previsto na classe de Bábaro.</p>
 
-				<li>function dgd_kit()</li>
-				<p>Este método visa inicializa uma lista contento todos os itens que um barbaro carrega consigo.</p>
+			<li>function dgd_kit()</li>
+			<p>Este método visa inicializa uma lista contento todos os itens que um barbaro carrega consigo.</p>
 
-				<li>function dgd_pericias()</li>
-				<p>Aqui será preenchido uma lista (array) com referência a todas as perícias que um barbaro pode ter.</p>
-				<p>E também uma outra lista de perícias que não fazer parte da lista do barbaro mas que mesmo assim ele poderá ter com penalidades.</p>
+			<li>function dgd_pericias()</li>
+			<p>Aqui será preenchido uma lista (array) com referência a todas as perícias que um barbaro pode ter.</p>
+			<p>E também uma outra lista de perícias que não fazer parte da lista do barbaro mas que mesmo assim ele poderá ter com penalidades.</p>
 
-				<li>function dgd_armas()</li>
-				<p>Este método será responsável por inicializar as possíveis armas que um bárbaro vai estar usando.</p>
+			<li>function dgd_armas()</li>
+			<p>Este método será responsável por inicializar as possíveis armas que um bárbaro vai estar usando.</p>
 
-				<li>function dgd_armaduras()</li>
-				<p>Este método será responsável por inicializar as possíveis armaduras que um bárbaro vai estar usando.</p>
+			<li>function dgd_armaduras()</li>
+			<p>Este método será responsável por inicializar as possíveis armaduras que um bárbaro vai estar usando.</p>
 
-				<li>function dgd_testes_de_resistencia($nivel)</li>
-				<p>Este método vai inicializar os três atributos que resprentam os testes de risistência de um personagem de D&D. Para isso ele vai precisar instanciar um objeto Testes_de_resistencia();. Essa instanciação já foi feita no método construtor e sua referência armazenada no atributo teste_de_resistencia. Como temos um objeto em teste_de_resistencia, basta fazer a chamada de cada método da classe Testes_de_resistencia() através dos comando:
-				<br>
-				$this->fortitude = $this->teste_de_resistencia->dg_teste_bom($nivel);
-				O código acima inicializa a atributo fortitude chamando um teste de resistência bom. 
-				$this->reflexos  = $this->teste_de_resistencia->dg_teste_ruim($nivel);
-				O código acima faz a mesma coisa do anterior, porém ele armazena no atributo reflexos e além disso está chamando o método de teste de resistência ruin.
-				</p>	
-			</ul>
-		</p>	
-		<p>
-			Esta classe possui as métodos mágicos descrito em outras classes acima. A ideia é a mesma, intercepetar atribuição e retorno de atributos inexistentes para coloca-lo no array $atributos que é a única propiedade da classe.
-		</p>
-		<li><h4>Classe - Barbaro</h4></li>	
-		<p>
-			Estas classes mais específicas vão implementar os métodos estabelecidos na interface de sua classe abstrata pai (Classes). Aqui casa classe vai definir como funcionará o comportamento de seus métodos. Embora as classes sejam diferentes, elas implementam os mesmos métodos, porém de maneiras distintas (viva o polimosfismo! rsrs)
-		</p>
+			<li>function dgd_testes_de_resistencia($nivel)</li>
+			<p>Este método vai inicializar os três atributos que resprentam os testes de risistência de um personagem de D&D. Para isso ele vai precisar instanciar um objeto Testes_de_resistencia();. Essa instanciação já foi feita no método construtor e sua referência armazenada no atributo teste_de_resistencia. Como temos um objeto em teste_de_resistencia, basta fazer a chamada de cada método da classe Testes_de_resistencia() através dos comando:
+			<br>
+			$this->fortitude = $this->teste_de_resistencia->dg_teste_bom($nivel);
+			O código acima inicializa a atributo fortitude chamando um teste de resistência bom. 
+			$this->reflexos  = $this->teste_de_resistencia->dg_teste_ruim($nivel);
+			O código acima faz a mesma coisa do anterior, porém ele armazena no atributo reflexos e além disso está chamando o método de teste de resistência ruin.
+			</p>	
+		</ul>
+	</p>	
+	<p>
+		Esta classe possui as métodos mágicos descrito em outras classes acima. A ideia é a mesma, intercepetar atribuição e retorno de atributos inexistentes para coloca-lo no array $atributos que é a única propiedade da classe.
+	</p>
+	<li><h4>Classe - Barbaro</h4></li>	
+	<p>
+		Estas classes mais específicas vão implementar os métodos estabelecidos na interface de sua classe abstrata pai (Classes). Aqui casa classe vai definir como funcionará o comportamento de seus métodos. Embora as classes sejam diferentes, elas implementam os mesmos métodos, porém de maneiras distintas (viva o polimosfismo! rsrs)
+	</p>
 
-		<li><h4>Classe - Barbaro</h4></li>	
-		<li><h4>Classe - Druida</h4></li>
-		<li><h4>Classe - Ranger</h4></li>	
-		<li><h4>Classe - Monge</h4></li>
-		<li><h4>Classe - Clérigo</h4></li>	
-		<li><h4>Classe - Paladino</h4></li>
-		<li><h4>Classe - Mago</h4></li>	
-		<li><h4>Classe - Feiticeiro</h4></li>
-		<li><h4>Classe - Ladino</h4></li>	
-		<li><h4>Classe - Bardo</h4></li>
-	</ul>
+	<li><h4>Classe - Barbaro</h4></li>	
+	<li><h4>Classe - Druida</h4></li>
+	<li><h4>Classe - Ranger</h4></li>	
+	<li><h4>Classe - Monge</h4></li>
+	<li><h4>Classe - Clérigo</h4></li>	
+	<li><h4>Classe - Paladino</h4></li>
+	<li><h4>Classe - Mago</h4></li>	
+	<li><h4>Classe - Feiticeiro</h4></li>
+	<li><h4>Classe - Ladino</h4></li>	
+	<li><h4>Classe - Bardo</h4></li>
+</ul>
 <p></p>
 
 <h2><a name="character">Classe Personagens</a></h2>
@@ -279,23 +279,23 @@ Sempre na medida do possível eu tentarei manter atualizado a documentação do cód
 
 
 <h2><a name="races">Classe Raças</a></h2>
-	<ul>
-		<li><h4>Classe - Humano</h4></li>
-		<li><h4>Classe - Orc</h4></li>	
-		<li><h4>Classe - Anão</h4></li>
-		<li><h4>Classe - Elfo</h4></li>	
-		<li><h4>Classe - Meio-Elfo</h4></li>
-		<li><h4>Classe - Halfing</h4></li>	
-	</ul>
+<ul>
+	<li><h4>Classe - Humano</h4></li>
+	<li><h4>Classe - Orc</h4></li>	
+	<li><h4>Classe - Anão</h4></li>
+	<li><h4>Classe - Elfo</h4></li>	
+	<li><h4>Classe - Meio-Elfo</h4></li>
+	<li><h4>Classe - Halfing</h4></li>	
+</ul>
 	
 <p></p>
 
 <h2><a name="test">Classe de Teste</a></h2>
-	<ul>
-		<li><h4>Classe - Test</h4></li>
-		<li><h4>Classe - Teste Barbaro</h4></li>	
-		<li><h4>Classe - Teste Personagem</h4></li>
-		<li><h4>Classe - Teste Raças</h4></li>	
-	</ul>
+<ul>
+	<li><h4>Classe - Test</h4></li>
+	<li><h4>Classe - Teste Barbaro</h4></li>	
+	<li><h4>Classe - Teste Personagem</h4></li>
+	<li><h4>Classe - Teste Raças</h4></li>	
+</ul>
 <p></p>
 
